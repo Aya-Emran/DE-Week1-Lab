@@ -13,7 +13,10 @@ A small online shop sends daily order data as a CSV file. A manager wants a reli
 Before reporting, record at least two issues you found in the CSV and what you recommend doing with each.
 
 1. Issue and recommendation:
+Missing customer city: Fill in the missing city if possible; otherwise, exclude the record from city-based reports.
 2. Issue and recommendation:
+Duplicate order ID and zero quantity: Remove duplicate orders and exclude orders with quantity <= 0 from valid order reports.
 
 ## What the pipeline does
 Complete after the lab: In one sentence, describe how the data moves from the source to a useful output.
+The pipeline loads order data from a CSV file into BigQuery, checks data quality, filters invalid records and duplicates, and produces a reliable output for the shop manager.
